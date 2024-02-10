@@ -18,7 +18,7 @@ const AddTask = (onAdd) => {
         <h1 className="text-3xl font-bold tracking-wider">Create New Task</h1>
         <button
           onClick={() => document.getElementById("my_modal_2").showModal()}
-          className="bg-primary px-8 py-3 text-white font-bold rounded-sm border-[1px] border-primary hover:bg-transparent hover:text-primary transition duration-500"
+          className="bg-primary px-8 py-3 text-white font-bold rounded-lg border-[1px] border-primary hover:bg-transparent hover:text-primary transition duration-500"
         >
           Add Task
         </button>
