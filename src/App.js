@@ -1,10 +1,12 @@
 import React from 'react';
 import Navbar from './Components/Navbar';
+import Banner from './Components/Banner';
 
 const App = () => {
   return (
-    <div>
+    <div className='w-11/12 mx-auto font-mono'>
       <Navbar />
+      <Banner />
     </div>
   );
 };
