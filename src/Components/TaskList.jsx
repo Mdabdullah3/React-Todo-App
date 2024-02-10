@@ -1,6 +1,6 @@
 import React from "react";
 import Task from "./Task";
-const TaskList = ({ allTask, onDelete, onToggleComplete }) => {
+const TaskList = ({ allTask, onDelete, onToggleComplete, onEdit }) => {
   return (
     <div className="px-6 mt-10">
       {allTask.length !== 0 ? (
@@ -13,6 +13,7 @@ const TaskList = ({ allTask, onDelete, onToggleComplete }) => {
               <Task
                 key={task.id}
                 allTask={task}
+                onEdit={onEdit}
                 onDelete={onDelete}
                 onToggleComplete={onToggleComplete}
               />

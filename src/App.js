@@ -10,6 +10,7 @@ const App = () => {
     const savedTasks = localStorage.getItem('tasks');
     return savedTasks ? JSON.parse(savedTasks) : [];
   });
+
   // Save tasks to local storage 
   useEffect(() => {
     localStorage.setItem('tasks', JSON.stringify(tasks));
@@ -31,13 +32,23 @@ const App = () => {
     );
   };
 
+  const editTask = (id, updatedTask, updatedPriority) => {
+    setTasks(tasks.map(task =>
+      task.id === id ? { ...task, task: updatedTask, priority: updatedPriority } : task
+    ));
+  };
+
   return (
     <div className='w-11/12 mx-auto font-mono'>
       <Navbar />
       <Banner />
       <AddTask onAdd={addTask} />
-      <TaskList allTask={tasks} onDelete={deleteTask} onToggleComplete={toggleComplete} />
-
+      <TaskList
+        allTask={tasks}
+        onDelete={deleteTask}
+        onToggleComplete={toggleComplete}
+        onEdit={editTask}
+      />
     </div>
   );
 };
