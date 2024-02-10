@@ -13,9 +13,9 @@ const AddTask = ({ onAdd }) => {
   };
 
   return (
-    <div className="mt-12 px-6">
+    <div className="mt-12 md:px-6">
       <div className="flex items-center justify-between">
-        <h1 className="md:text-3xl text-xl font-bold">Create New Task</h1>
+        <h1 className="md:text-3xl text-lg font-bold">Create New Task</h1>
         <button
           onClick={() => document.getElementById("my_modal_2").showModal()}
           className="bg-primary md:px-8 px-6 py-3 text-white font-bold rounded-lg border-[1px] border-primary hover:bg-transparent hover:text-primary transition duration-500"

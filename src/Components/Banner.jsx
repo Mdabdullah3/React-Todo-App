@@ -11,7 +11,7 @@ const Banner = () => {
         <h1 className="md:text-6xl lg:text-7xl text-4xl font-bold tracking-wider">
           Good Morning
         </h1>
-        <div className="flex items-center justify-between pb-4">
+        <div className="md:flex items-center justify-between pb-4">
           <div>
             <p className="flex items-center gap-2 text-red-500 my-2 font-bold">
               <HiOutlineSpeakerphone size={20} /> 11 Task
@@ -24,13 +24,11 @@ const Banner = () => {
               {isToday(today) && format(today, "dd MMM yyyy")}
             </p>
           </div>
-          <div>
-            <p className="md:text-4xl text-xl font-bold tracking-wider text-center mb-1">
+          <div className="mt-4 md:mt-0">
+            <p className="md:text-4xl text-xl font-bold tracking-wider md:text-center mb-1">
               50% Done
             </p>
-            <h1 className="md:text-2xl tracking-wider md:text-start text-center">
-              Completed Task
-            </h1>
+            <h1 className="md:text-2xl tracking-wider">Completed Task</h1>
           </div>
         </div>
       </div>
