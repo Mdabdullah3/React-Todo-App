@@ -1,70 +1,67 @@
-# Getting Started with Create React App
+# Todo List Application
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+## Introduction
 
-## Available Scripts
+This is a simple Todo List application built using React.js. It allows users to manage their tasks by adding, editing, marking as completed, and deleting tasks. Tasks can also be categorized by priority and displayed accordingly.
 
-In the project directory, you can run:
+## Features
 
-### `npm start`
+### Task List Display
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
+- Displays a list of tasks with their respective status (completed or incomplete).
+- Each task has options to mark as completed or delete.
+- Includes a counter for total tasks and completed tasks.
 
-The page will reload when you make changes.\
-You may also see any lint errors in the console.
+### Task Management
 
-### `npm test`
+- Ability to add a new task.
+- Ability to edit an existing task.
+- Ability to mark a task as completed.
+- Ability to delete a task.
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+### Styling
 
-### `npm run build`
+- Clean and user-friendly interface.
+- Utilizes CSS for styling, ensuring a visually appealing layout.
+- May use CSS frameworks like Tailwind Css for enhanced styling.
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
+### State Management
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
+- Utilizes React hooks such as useState and useEffect for managing state.
+- May use additional React state management tools if needed.
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+### Other Features
 
-### `npm run eject`
+- Implements local storage to persist tasks even after page refresh.
+- Includes a basic filtering system based on task priority.
 
-**Note: this is a one-way operation. Once you `eject`, you can't go back!**
+## Technologies Used
 
-If you aren't satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
+- React.js
+- HTML
+- CSS
+- Tailwind Css
+- React Icons
 
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you're on your own.
+## Project Structure
 
-You don't have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn't feel obligated to use this feature. However we understand that this tool wouldn't be useful if you couldn't customize it when you are ready for it.
+- `src/`: Contains the source code for the application.
+  - `components/`: Holds React components for different parts of the application.
+  - `App.js`: Main component responsible for rendering the entire application.
+  - `index.js`: Entry point of the application.
 
-## Learn More
+## Installation
 
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
+1. Clone the repository: `git clone <repository-url>`
+2. Navigate to the project directory: `cd todo-list`
+3. Install dependencies: `npm install`
+4. Start the development server: `npm start`
 
-To learn React, check out the [React documentation](https://reactjs.org/).
+## Usage
 
-### Code Splitting
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
-
-### Analyzing the Bundle Size
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
-
-### Making a Progressive Web App
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
-
-### Advanced Configuration
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
-
-### Deployment
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
-
-### `npm run build` fails to minify
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
+1. Open the application in your web browser.
+2. Add tasks using the input field.
+3. Edit tasks by clicking on the task and modifying the details.
+4. Mark tasks as completed by checking the checkbox next to them.
+5. Delete tasks by clicking on the delete button.
+6. Filter tasks based on priority using the provided options.
