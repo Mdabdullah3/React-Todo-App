@@ -1,6 +1,17 @@
-import React from "react";
+import React, { useState } from "react";
 
-const AddTask = () => {
+const AddTask = (onAdd) => {
+  const [description, setDescription] = useState("");
+  const [priority, setPriority] = useState("low");
+
+  const handleSubmit = (e) => {
+    e.preventDefault();
+    if (!description.trim()) return;
+    onAdd({ description, priority });
+    setDescription("");
+    setPriority("low");
+  };
+
   return (
     <div className="mt-12 px-6">
       <div className="flex items-center justify-between">
@@ -12,7 +23,37 @@ const AddTask = () => {
           Add Task
         </button>
         <dialog id="my_modal_2" className="modal">
-          <div className="modal-box"></div>
+          <div className="modal-box">
+            <form method="dialog" className="">
+              <button className="btn btn-sm btn-circle btn-primary text-white absolute right-1 top-1">
+                ✕
+              </button>
+            </form>
+            <form onSubmit={handleSubmit} className="flex flex-col gap-5 mt-5">
+              <textarea
+                type="text"
+                className="textarea textarea-bordered text-lg"
+                placeholder="Task Name..."
+                value={description}
+                onChange={(e) => setDescription(e.target.value)}
+              />
+              <select
+                className="select select-bordered w-full"
+                value={priority}
+                onChange={(e) => setPriority(e.target.value)}
+              >
+                <option value="low">Low</option>
+                <option value="medium">Medium</option>
+                <option value="high">High</option>
+              </select>
+              <button
+                type="submit"
+                className="bg-primary w-full py-3 rounded-lg text-white"
+              >
+                Add Task
+              </button>
+            </form>
+          </div>
           <form method="dialog" className="modal-backdrop">
             <button>close</button>
           </form>
