@@ -3,18 +3,19 @@ import Navbar from './Components/Navbar';
 import Banner from './Components/Banner';
 import AddTask from './Components/AddTask';
 import TaskList from './Components/TaskList';
+import FilterTask from './Components/FilterTask';
 
 const App = () => {
-  // Load tasks from local storage on component mount
   const [tasks, setTasks] = useState(() => {
     const savedTasks = localStorage.getItem('tasks');
     return savedTasks ? JSON.parse(savedTasks) : [];
   });
-
   // Save tasks to local storage 
   useEffect(() => {
     localStorage.setItem('tasks', JSON.stringify(tasks));
   }, [tasks]);
+
+  const [selectedPriority, setSelectedPriority] = useState('all');
 
   const addTask = newTask => {
     setTasks([...tasks, { id: Date.now(), ...newTask, completed: false }]);
@@ -43,12 +44,15 @@ const App = () => {
       <Navbar />
       <Banner />
       <AddTask onAdd={addTask} />
+      <FilterTask selectedPriority={selectedPriority} setSelectedPriority={setSelectedPriority} />
       <TaskList
         allTask={tasks}
+        selectedPriority={selectedPriority}
         onDelete={deleteTask}
         onToggleComplete={toggleComplete}
         onEdit={editTask}
       />
+
     </div>
   );
 };

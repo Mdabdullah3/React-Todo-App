@@ -1,18 +1,30 @@
 import React from "react";
 import Task from "./Task";
-const TaskList = ({ allTask, onDelete, onToggleComplete, onEdit }) => {
+
+const TaskList = ({
+  allTask,
+  onDelete,
+  selectedPriority,
+  onToggleComplete,
+  onEdit,
+}) => {
+  const filteredTasks =
+    selectedPriority === "all"
+      ? allTask
+      : allTask.filter((task) => task.priority === selectedPriority);
+
   return (
     <div className="px-6 mt-10">
-      {allTask.length !== 0 ? (
+      {filteredTasks.length !== 0 ? (
         <div>
           <h2 className="font-bold tracking-wider text-lg text-center">
             Your Task
           </h2>
           <div className="grid lg:grid-cols-3 md:grid-cols-2 grid-cols-1 items-center gap-6 mt-4">
-            {allTask.map((task) => (
+            {filteredTasks.map((task) => (
               <Task
                 key={task.id}
-                allTask={task}
+                allTask={task} // Pass each individual task
                 onEdit={onEdit}
                 onDelete={onDelete}
                 onToggleComplete={onToggleComplete}
@@ -28,4 +40,5 @@ const TaskList = ({ allTask, onDelete, onToggleComplete, onEdit }) => {
     </div>
   );
 };
+
 export default TaskList;
