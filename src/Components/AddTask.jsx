@@ -1,14 +1,14 @@
 import React, { useState } from "react";
 
-const AddTask = (onAdd) => {
-  const [description, setDescription] = useState("");
+const AddTask = ({ onAdd }) => {
+  const [task, setTask] = useState("");
   const [priority, setPriority] = useState("low");
 
   const handleSubmit = (e) => {
     e.preventDefault();
-    if (!description.trim()) return;
-    onAdd({ description, priority });
-    setDescription("");
+    if (!task.trim()) return;
+    onAdd({ task, priority });
+    setTask("");
     setPriority("low");
   };
 
@@ -34,17 +34,26 @@ const AddTask = (onAdd) => {
                 type="text"
                 className="textarea textarea-bordered text-lg"
                 placeholder="Task Name..."
-                value={description}
-                onChange={(e) => setDescription(e.target.value)}
+                value={task}
+                onChange={(e) => setTask(e.target.value)}
               />
               <select
-                className="select select-bordered w-full"
+                className="select select-bordered w-full cursor-pointer"
                 value={priority}
                 onChange={(e) => setPriority(e.target.value)}
               >
-                <option value="low">Low</option>
-                <option value="medium">Medium</option>
-                <option value="high">High</option>
+                <option className="bg-sky-400/40 " value="low">
+                  Low
+                </option>
+                <option
+                  className=" bg-yellow-300/40 cursor-pointer"
+                  value="medium"
+                >
+                  Medium
+                </option>
+                <option className="bg-red-400/40" value="high">
+                  High
+                </option>
               </select>
               <button
                 type="submit"
