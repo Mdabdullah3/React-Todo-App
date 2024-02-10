@@ -24,7 +24,7 @@ const Task = ({ allTask, onDelete, onToggleComplete }) => {
   }
   return (
     <div
-      className={`p-4 mb-4 rounded-lg mt-4 shadow-lg relative bg-gradient-to-b  to-white ${priorityColor}`}
+      className={`p-4  rounded-lg mt-2 shadow-lg relative bg-gradient-to-b  to-white ${priorityColor}`}
     >
       <h1 className="text-2xl font-bold capitalize my-2">{task}</h1>
 
@@ -33,7 +33,7 @@ const Task = ({ allTask, onDelete, onToggleComplete }) => {
           type="checkbox"
           checked={completed}
           onChange={handleToggleComplete}
-          className="checkbox checkbox-primary checkbox-sm"
+          className="checkbox checkbox-secondary checkbox-sm"
         />
         <button onClick={handleToggleComplete} className="ml-2">
           {completed ? "Complete" : "Incomplete"}
