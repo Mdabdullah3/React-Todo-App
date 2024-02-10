@@ -52,7 +52,6 @@ const App = () => {
         onToggleComplete={toggleComplete}
         onEdit={editTask}
       />
-
     </div>
   );
 };

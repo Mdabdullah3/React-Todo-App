@@ -22,6 +22,7 @@ const AddTask = ({ onAdd }) => {
         >
           Add Task
         </button>
+        {/* Using Modal For Handling New Task */}
         <dialog id="my_modal_2" className="modal">
           <div className="modal-box">
             <form method="dialog" className="">

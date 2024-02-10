@@ -29,6 +29,7 @@ const Task = ({ allTask, onDelete, onToggleComplete, onEdit }) => {
     onEdit(id, task, priority);
     setIsEditing(false);
   };
+  // handle Card background Color By priority Color
   const priorityColor = (() => {
     switch (priority) {
       case "low":

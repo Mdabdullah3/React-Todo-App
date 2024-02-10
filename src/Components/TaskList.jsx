@@ -24,7 +24,7 @@ const TaskList = ({
             {filteredTasks.map((task) => (
               <Task
                 key={task.id}
-                allTask={task} // Pass each individual task
+                allTask={task}
                 onEdit={onEdit}
                 onDelete={onDelete}
                 onToggleComplete={onToggleComplete}
