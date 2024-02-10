@@ -56,7 +56,7 @@ const Task = ({ allTask, onDelete, onToggleComplete, onEdit }) => {
         <div
           className={`p-4 rounded-lg mt-2 shadow-lg relative bg-gradient-to-b  to-white ${priorityColor}`}
         >
-          <h1 className="text-2xl font-bold capitalize my-2 mt-5">{task}</h1>
+          <h1 className="text-xl font-bold capitalize my-2 mt-5">{task}</h1>
           <div className="flex items-center">
             <input
               type="checkbox"
